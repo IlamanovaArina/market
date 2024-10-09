@@ -7,8 +7,6 @@ def test_product_init(test_category):
     assert len(test_category.products) == 1
     assert test_category.category_count == 1
     assert test_category.product_count == 1
-
-    x = Mock(category = ["<function test_product at 0x0000025FB55EE8E0>"])
+    x = Mock(category=["<function test_product at 0x0000025FB55EE8E0>"])
     test_category.products = x
-
     assert test_category.products == x
