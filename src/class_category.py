@@ -23,7 +23,10 @@ class Category:
 
     @property
     def products(self):
-        return self.__products
+        str_product = ""
+        for product in self.__products:
+            str_product += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт."
+        return str_product
 
     @products.setter
     def products(self):

@@ -12,12 +12,13 @@ class Product:
 
     @classmethod
     def new_product(cls, my_dict):
-        name, description, price, quantity = my_dict.values()
-        return cls(name, description, price, quantity)
+        if my_dict.get("price") > 0:
+            name, description, price, quantity = my_dict.values()
+            return cls(name, description, price, quantity)
 
     @property
     def price(self):
-        self.__price
+        return self.__price
 
     @price.setter
     def price(self, new_price):
