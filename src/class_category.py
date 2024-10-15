@@ -10,28 +10,30 @@ class Category:
     category_count = 0
     product_count = 0
 
-    def __init__(self, name, description, product):
+    def __init__(self, name, description, products):
         self.name = name
         self.description = description
-        self.__products = []
+        self.__products = products
         Category.category_count += 1
-        Category.product_count += len(product)
+        for p in products:
+            Category.product_count += p.quantity
 
-    def add_product(self, product):
-        if isinstance(product, Product):
-            self.__products.append(product)
+    def add_product(self, new_product):
+        if isinstance(new_product, Product):
+            self.__products.append(new_product)
+            Category.product_count += new_product.quantity
 
     @property
     def products(self):
         str_product = ""
-        for product in self.__products:
-            str_product += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт."
-        return str_product
+        for prod in self.__products:
+            str_product += f"{prod.name}, {prod.price} руб. Остаток: {prod.quantity} шт. "
+        print(str_product)
+        return self.__products
 
     @products.setter
-    def products(self):
-        self.__products.append(product)
-        self.product_count += 1
-
-
-
+    def products(self, prod):
+        self.__products.append(prod)
+        print(self.__products)
+        for p in prod:
+            Category.product_count += p.quantity
