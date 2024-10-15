@@ -1,4 +1,4 @@
-def test_class_proproduct_init1(test_product):
+def test_class_product_init1(test_product):
     assert test_product.name == "Арбуз"
     assert test_product.description == "Свежий"
     assert test_product.price == 85

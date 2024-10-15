@@ -1,5 +1,3 @@
-from itertools import product
-
 from src.class_product import Product
 
 
@@ -34,6 +32,4 @@ class Category:
     @products.setter
     def products(self, prod):
         self.__products.append(prod)
-        print(self.__products)
-        for p in prod:
-            Category.product_count += p.quantity
+        Category.product_count += prod.quantity

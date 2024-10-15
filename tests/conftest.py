@@ -11,5 +11,6 @@ def test_product():
 
 @pytest.fixture
 def test_category():
+    test_product = Product("Арбуз", "Свежий", 85, 8)
     return Category("Ягоды",
                     "Арбуз - это тоже ягода", [test_product])
