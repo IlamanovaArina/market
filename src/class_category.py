@@ -26,8 +26,7 @@ class Category:
         str_product = ""
         for prod in self.__products:
             str_product += f"{prod.name}, {prod.price} руб. Остаток: {prod.quantity} шт. "
-        print(str_product)
-        return self.__products
+        return str_product
 
     @products.setter
     def products(self, prod):
