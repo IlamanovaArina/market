@@ -19,6 +19,3 @@ def test_new_price(test_product2):
     assert test_product2.price == 800
     test_product2.price = 0
     assert test_product2.price == 800
-
-
-

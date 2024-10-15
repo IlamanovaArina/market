@@ -16,4 +16,3 @@ def test_product_(test_category1, test_product2):
     assert len(test_category1.products) == 1
     assert test_category1.category_count == 2
     assert test_category1.product_count == 15
-

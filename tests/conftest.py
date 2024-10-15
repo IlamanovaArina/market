@@ -6,7 +6,7 @@ from src.class_product import Product
 
 @pytest.fixture
 def test_product1():
-    return Product("Арбуз", "Свежий", 85,8)
+    return Product("Арбуз", "Свежий", 85, 8)
 
 
 @pytest.fixture
@@ -23,5 +23,3 @@ def test_category1():
     return Category("Ягоды",
                     "Арбуз - это тоже ягода",
                     [])
-
-
