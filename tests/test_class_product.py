@@ -20,8 +20,10 @@ def test_new_price(test_product2):
     test_product2.price = 0
     assert test_product2.price == 800
 
+
 def test_product_str(test_product1):
     assert str(test_product1) == "Арбуз, 85 руб. Остаток: 8 шт."
+
 
 def test_product_add(test_product1, test_product2):
     assert test_product1 + test_product2 == 1373
