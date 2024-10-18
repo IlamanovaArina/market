@@ -1,7 +1,7 @@
 class Product:
     name: str
     description: str
-    price: float
+    __price: float
     quantity: int
 
     def __init__(self, name, description, price, quantity):
@@ -27,3 +27,10 @@ class Product:
             return
         else:
             self.__price = new_price
+
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other):
+        total_cost = (self.__price * self.quantity) + (other.__price * other.quantity)
+        return total_cost
