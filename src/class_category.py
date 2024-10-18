@@ -23,10 +23,7 @@ class Category:
 
     @property
     def products(self):
-        str_product = ""
-        for prod in self.__products:
-            str_product += f"{prod.name}, {prod.price} руб. Остаток: {prod.quantity} шт.\n"
-        return str_product
+        return self.__products
 
     @products.setter
     def products(self, prod):
@@ -38,3 +35,7 @@ class Category:
         for prod in self.__products:
             str_product += f"{prod.name}, {prod.price} руб. Остаток: {prod.quantity} шт.\n"
         return str_product
+
+    def __len__(self):
+        for prod in self.__products:
+            return len(prod.products)
