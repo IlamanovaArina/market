@@ -19,7 +19,11 @@ class Category:
     def add_product(self, new_product):
         if isinstance(new_product, Product):
             self.__products.append(new_product)
+
+            # Добавляем количество товаров от нового продукта к основному количеству
             Category.product_count += new_product.quantity
+        else:
+            raise TypeError
 
     @property
     def products(self):
