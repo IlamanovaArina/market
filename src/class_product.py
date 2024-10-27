@@ -11,17 +11,20 @@ class Product:
         self.quantity = quantity
 
     @classmethod
-    def new_product(cls, my_dict):
+    def new_product(cls, my_dict: dict):
+        """ Метод добавляет новые товары из словаря """
         if my_dict.get("price") > 0:
             name, description, price, quantity = my_dict.values()
             return cls(name, description, price, quantity)
 
     @property
     def price(self):
+        """ Даёт доступ для просмотра приватной цены """
         return self.__price
 
     @price.setter
     def price(self, new_price):
+        """ Меняет цену если указано число больше 0 """
         if new_price <= 0:
             print("Цена не должна быть нулевая или отрицательная")
             return
@@ -29,9 +32,12 @@ class Product:
             self.__price = new_price
 
     def __str__(self):
+        """ Выводит в виде строки данные о товаре """
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
+        """ Возвращает стоимость складываемых товаров
+        умноженную на их количество на складе """
         if isinstance(other, Product):
             total_cost = self.__price * self.quantity + other.__price * other.quantity
             return total_cost

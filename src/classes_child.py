@@ -10,7 +10,7 @@ class Smartphone(Product):
         self.color = color
 
     def __add__(self, other):
-        if isinstance(other, Smartphone):
+        if type(other) == Smartphone:
             return super().__add__(other)
         else:
             raise TypeError
@@ -24,7 +24,7 @@ class LawnGrass(Product):
         self.color = color
 
     def __add__(self, other):
-        if isinstance(other, LawnGrass):
+        if type(other) == LawnGrass:
             return super().__add__(other)
         else:
             raise TypeError

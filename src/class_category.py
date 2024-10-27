@@ -17,6 +17,7 @@ class Category:
             Category.product_count += p.quantity
 
     def add_product(self, new_product):
+        """ Добавляет новый продукт в категорию """
         if isinstance(new_product, Product):
             self.__products.append(new_product)
 
@@ -27,19 +28,23 @@ class Category:
 
     @property
     def products(self):
+        """ Даёт доступ для просмотра списка товаров (объекты) """
         return self.__products
 
     @products.setter
     def products(self, prod):
+        """ Добавляет (объект) продукт в список товаров """
         self.__products.append(prod)
         Category.product_count += prod.quantity
 
     def __str__(self):
+        """ Выводит в виде строки данные о товаре """
         str_product = ""
         for prod in self.__products:
             str_product += f"{prod.name}, количество продуктов: {prod.quantity} шт.\n"
         return str_product
 
     def __len__(self):
+        """ Показывает сколько (объектов) продуктов в списке продуктов """
         for prod in self.__products:
             return len(prod.products)
