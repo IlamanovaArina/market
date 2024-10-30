@@ -1,4 +1,7 @@
-class Product:
+from src.abstract_class import BaseProduct, MixinInfo
+
+
+class Product(BaseProduct, MixinInfo):
     name: str
     description: str
     price: float
