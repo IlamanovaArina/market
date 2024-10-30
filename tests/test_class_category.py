@@ -21,4 +21,6 @@ def test_product(test_category1, test_product2):
 def test_category_str(test_category1, test_product1):
     test_category1.products = test_product1
 
-    assert str(test_category1) == "Арбуз, 85 руб. Остаток: 8 шт.\n"
+    assert str(test_category1) == "Арбуз, количество продуктов: 8 шт.\n"
+
+# def test_
