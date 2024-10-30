@@ -1,3 +1,7 @@
+import pytest
+from src.class_product import Product
+
+
 def test_class_product_init(test_product1):
     assert test_product1.name == "Арбуз"
     assert test_product1.description == "Свежий"
@@ -27,3 +31,8 @@ def test_product_str(test_product1):
 
 def test_product_add(test_product1, test_product2):
     assert test_product1 + test_product2 == 1373
+
+
+def test_class_product_init_zero():
+    with pytest.raises(ValueError):
+        Product("Арбуз", "Свежий", 85, 0)

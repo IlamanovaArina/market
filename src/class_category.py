@@ -48,3 +48,22 @@ class Category:
         """ Показывает сколько (объектов) продуктов в списке продуктов """
         for prod in self.__products:
             return len(prod.products)
+
+    def middle_price(self):
+        """ Средняя цена продуктов данной категории """
+        try:
+            len_ = 0
+            price_ = 0
+
+            for prod in self.__products:
+                price_ += prod.price
+                len_ = len(self.products)
+            if len_ > 0:
+                result = price_ / len_
+                return round(result, 1)
+            elif price_ <= 0:
+                return 0
+            else:
+                return 0
+        except Exception as e:
+            return f"Возбуждено исключение: {e}"

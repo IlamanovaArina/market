@@ -1,3 +1,6 @@
+from src.class_category import Category
+
+
 def test_product_init(test_category1, test_product1):
     test_category1.products = test_product1
 
@@ -23,4 +26,14 @@ def test_category_str(test_category1, test_product1):
 
     assert str(test_category1) == "Арбуз, количество продуктов: 8 шт.\n"
 
-# def test_
+
+def test_middle_price(test_product1, test_product2):
+    category_empty = Category("Ягоды",
+                              "Арбуз - это тоже ягода",
+                              [test_product1, test_product2])
+    assert category_empty.middle_price() == 92
+
+    category_empty = Category("Ягоды",
+                              "Арбуз - это тоже ягода",
+                              [])
+    assert category_empty.middle_price() == 0
