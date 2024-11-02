@@ -8,11 +8,14 @@ class Product(BaseProduct, MixinInfo):
     quantity: int
 
     def __init__(self, name, description, price, quantity):
-        self.name = name
-        self.description = description
-        self.__price = price
-        self.quantity = quantity
-        super().__init__()
+        if quantity > 0:
+            self.name = name
+            self.description = description
+            self.__price = price
+            self.quantity = quantity
+            super().__init__()
+        else:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
 
     @classmethod
     def new_product(cls, my_dict: dict):
